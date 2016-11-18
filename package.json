@@ -1,0 +1,26 @@
+{
+  "name": "senadores-base",
+  "description": "Información basica y estatica de los senadores actuales de Chile",
+  "author": "Yerko",
+  "version": "0.1.0",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "senadores.json"
+  ],
+  "scripts": {
+    "test": "standard --verbose | snazzy && ava"
+  },
+  "repository": "YerkoPalma/senadores-base",
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "rut.js": "0.0.2"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "snazzy": "^5.0.0",
+    "standard": "^8.5.0"
+  }
+}
