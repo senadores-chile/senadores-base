@@ -12,7 +12,14 @@
     "test": "standard --verbose | snazzy && ava"
   },
   "repository": "YerkoPalma/senadores-base",
-  "keywords": [],
+  "keywords": [
+    "senadores",
+    "senado",
+    "chile",
+    "transparencia",
+    "congreso",
+    "politica"
+  ],
   "license": "MIT",
   "dependencies": {
     "assert": "^1.4.1",
