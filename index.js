@@ -1,7 +1,7 @@
 'use strict'
 const senadores = require('./senadores.json')
 const assert = require('assert')
-const { validate } = require('rut.js')
+const validate = require('rut.js').validate
 
 // Wrap a string to prevent search errors for case mismatch and untrimed strings
 // (str) -> str
