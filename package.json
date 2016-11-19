@@ -23,10 +23,10 @@
   "license": "MIT",
   "dependencies": {
     "assert": "^1.4.1",
-    "rut.js": "0.0.2"
+    "rut.js": "^0.1.0"
   },
   "devDependencies": {
-    "ava": "*",
+    "ava": "^0.17.0",
     "snazzy": "^5.0.0",
     "standard": "^8.5.0"
   }

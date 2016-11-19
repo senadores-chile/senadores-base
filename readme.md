@@ -2,13 +2,13 @@
 
 > Información basica y estatica de los senadores actuales de Chile
 
-## Installation
+## Instalación
 
 ```bash
 npm install --save senadores-base
 ```
 
-## Usage
+## Uso
 
 ```javascript
 var senadoresBase = require('senadores-base')
@@ -26,7 +26,7 @@ senadoresBase({ nombre: 'Allamand' })
 */
 ```
 
-## License
+## Licencia
 
 [MIT](/license)
 
