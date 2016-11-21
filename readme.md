@@ -26,6 +26,12 @@ senadoresBase({ nombre: 'Allamand' })
 */
 ```
 
+## API
+
+### `senadoresBase([query])`
+
+Función que retorna siempre un arreglo con los senadores encontrados luego de aplicar los filtros ingresados en la variable query. El parametro `query` es opcional, si no se ingresa, se retornan todos los senadores, si se ingresa un string, se busca por nombre, si se ingresa un numero, se busca por rut, si se ingresa un objeto, se busca por cada uno de los campos ingresados (para más información, revisa los [tests](/test.js)).
+
 ## Licencia
 
 [MIT](/license)

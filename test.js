@@ -1,6 +1,36 @@
 import test from 'ava'
 import senadoresBase from './'
 
+test('default queries', t => {
+  t.plan(4)
+
+  // search by name
+  t.is(senadoresBase('Allamand').length, 1)
+  t.deepEqual(senadoresBase('Allamand')[0], {
+    id: 905,
+    nombre: 'Allamand Zavala, Andrés',
+    rut: '5002921-2',
+    region: 'Región Metropolitana ',
+    circunscripcion: 7,
+    telefono: '(56-32) 2504701',
+    mail: 'allamand@senado.cl',
+    partido: 'R.N.'
+  })
+
+  // search by rut
+  t.is(senadoresBase(13829856).length, 1)
+  t.deepEqual(senadoresBase(13829856)[0], {
+    id: 687,
+    nombre: 'Coloma Correa, Juan Antonio',
+    rut: '13829856-6',
+    region: 'Región del Maule',
+    circunscripcion: 10,
+    telefono: '(56-32) 2504505',
+    mail: 'jcoloma@senado.cl',
+    partido: 'U.D.I.'
+  })
+})
+
 test('valid individual queries', t => {
   t.plan(10)
 

@@ -25,6 +25,12 @@ module.exports = function senadoresBase (options) {
 
     return wrapString(senador.rut) === wrapString(rut)
   }
+
+  const defualtRutFilter = (senador, rut) => {
+    rut = rut.toString()
+
+    return senador.rut.split('-')[0] === rut
+  }
   const regionFilter = (senador, region) => {
     assert(typeof region === 'string' || region instanceof RegExp, 'La region solo se puede filtrar por string o expresion regular')
 
@@ -52,6 +58,9 @@ module.exports = function senadoresBase (options) {
   }
 
   const filter = elem => {
+    // default queries
+    if (typeof options === 'string') return nameFilter(elem, options)
+    if (typeof options === 'number') return defualtRutFilter(elem, options)
     return (options.nombre ? nameFilter(elem, options.nombre) : true) &&
            (options.rut ? rutFilter(elem, options.rut) : true) &&
            (options.region ? regionFilter(elem, options.region) : true) &&
