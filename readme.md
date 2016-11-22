@@ -35,7 +35,7 @@ Función que retorna siempre un arreglo con los senadores encontrados luego de a
 ## Otros enlaces
 
 - [senadores](https://github.com/YerkoPalma/senadores) - Datos publicos disponibles en la pagina www.senado.cl.
-- [senadores-base](https://github.com/YerkoPalma/senadores-asistencia) - Observador de la asistencia de senadores tanto a sesiones de sala como a comisiones del senado de Chile.
+- [senadores-asistencia](https://github.com/YerkoPalma/senadores-asistencia) - Observador de la asistencia de senadores tanto a sesiones de sala como a comisiones del senado de Chile.
 
 ## Licencia
 
