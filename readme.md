@@ -32,8 +32,11 @@ senadoresBase({ nombre: 'Allamand' })
 
 Función que retorna siempre un arreglo con los senadores encontrados luego de aplicar los filtros ingresados en la variable query. El parametro `query` es opcional, si no se ingresa, se retornan todos los senadores, si se ingresa un string, se busca por nombre, si se ingresa un numero, se busca por rut, si se ingresa un objeto, se busca por cada uno de los campos ingresados (para más información, revisa los [tests](/test.js)).
 
+## Otros enlaces
+
+- [senadores](https://github.com/YerkoPalma/senadores) - Datos publicos disponibles en la pagina www.senado.cl.
+- [senadores-base](https://github.com/YerkoPalma/senadores-asistencia) - Observador de la asistencia de senadores tanto a sesiones de sala como a comisiones del senado de Chile.
+
 ## Licencia
 
-[MIT](/license)
-
-Crafted by Yerko ([@yerko_palma](https://twitter.com/yerko_palma)).
+[MIT](/license) © [Yerko Palma](https://github.com/YerkoPalma).
