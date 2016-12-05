@@ -1,3 +1,3 @@
 const senadores = require('./')
 
-console.log(senadores({ partido: 'PS' }))
+console.log(senadores(['Allamand', 'Allende']))

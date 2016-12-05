@@ -79,10 +79,26 @@ module.exports = function senadoresBase (options) {
     return typeof partido === 'string' ? wrapString(senador.partido).indexOf(wrapString(partido)) > -1 : partido.test(senador.partido)
   }
 
+  // Get a single senator from the senators array
+  // (str|num) -> obj
+  const getSenator = senatorId => {
+    if (typeof senatorId === 'string') {
+      return senadores.filter(senador => {
+        return nameFilter(senador, senatorId)
+      })[0]
+    }
+    if (typeof senatorId === 'number') {
+      return senadores.filter(senador => {
+        return defualtRutFilter(senador, senatorId)
+      })[0]
+    }
+  }
+
   const filter = elem => {
     // default queries
     if (typeof options === 'string') return nameFilter(elem, options)
     if (typeof options === 'number') return defualtRutFilter(elem, options)
+
     return (options.nombre ? nameFilter(elem, options.nombre) : true) &&
            (options.rut ? rutFilter(elem, options.rut) : true) &&
            (options.region ? regionFilter(elem, options.region) : true) &&
@@ -92,5 +108,5 @@ module.exports = function senadoresBase (options) {
            (options.partido ? partidoFilter(elem, options.partido) : true)
   }
 
-  return senadores.filter(filter)
+  return Array.isArray(options) ? options.map(getSenator) : senadores.filter(filter)
 }
