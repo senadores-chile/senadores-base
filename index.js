@@ -3,10 +3,33 @@ const senadores = require('./senadores.json')
 const assert = require('assert')
 const validate = require('rut.js').validate
 
+// Remove accent vocals
+// (str) -> str
+function removeAccent (str) {
+  assert.equal(typeof str, 'string', 'Sólo se puede remover acentos de strings')
+  return str
+          .replace(/á/g, 'a')
+          .replace(/é/g, 'e')
+          .replace(/í/g, 'i')
+          .replace(/ó/g, 'o')
+          .replace(/ú/g, 'u')
+          .replace(/Á/g, 'A')
+          .replace(/É/g, 'E')
+          .replace(/Í/g, 'I')
+          .replace(/Ó/g, 'O')
+          .replace(/Ú/g, 'U')
+}
+
+function removeDots (str) {
+  assert.equal(typeof str, 'string', 'Sólo se puede remover puntos de strings')
+
+  return str.replace(/\./g, '')
+}
+
 // Wrap a string to prevent search errors for case mismatch and untrimed strings
 // (str) -> str
 function wrapString (str) {
-  return str ? str.toUpperCase().trim() : ''
+  return str ? removeAccent(removeDots(str)).toUpperCase().trim() : ''
 }
 
 // Filter an array of objects against multiple conditions
@@ -25,7 +48,6 @@ module.exports = function senadoresBase (options) {
 
     return wrapString(senador.rut) === wrapString(rut)
   }
-
   const defualtRutFilter = (senador, rut) => {
     rut = rut.toString()
 

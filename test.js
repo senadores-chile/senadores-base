@@ -31,6 +31,13 @@ test('default queries', t => {
   })
 })
 
+test('equivalent searchs', t => {
+  t.plan(2)
+
+  t.deepEqual(senadoresBase('Ossandon'), senadoresBase('Ossandón'))
+  t.deepEqual(senadoresBase({ partido: 'ps' }), senadoresBase({ partido: 'P.S.' }))
+})
+
 test('valid individual queries', t => {
   t.plan(10)
 

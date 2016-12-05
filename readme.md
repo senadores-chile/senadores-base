@@ -15,14 +15,14 @@ var senadoresBase = require('senadores-base')
 
 senadoresBase({ nombre: 'Allamand' })
 /*
-    {
-        nombre: 'Allamand Zavala, Andrés',
-        rut: '5002921-2',
-        region: 'Región Metropolitana ',
-        circunscripcion: 7,
-        telefono: '(56-32) 2504701',
-        mail: 'allamand@senado.cl'
-    }
+    [ { id: 905,
+    nombre: 'Allamand Zavala, Andrés',
+    rut: '5002921-2',
+    region: 'Región Metropolitana ',
+    circunscripcion: 7,
+    telefono: '(56-32) 2504701',
+    mail: 'allamand@senado.cl',
+    partido: 'R.N.' } ]
 */
 ```
 
@@ -36,6 +36,7 @@ Función que retorna siempre un arreglo con los senadores encontrados luego de a
 
 - [senadores](https://github.com/YerkoPalma/senadores) - Datos publicos disponibles en la pagina www.senado.cl.
 - [senadores-asistencia](https://github.com/YerkoPalma/senadores-asistencia) - Observador de la asistencia de senadores tanto a sesiones de sala como a comisiones del senado de Chile.
+- [senadores-detalle](https://github.com/YerkoPalma/senadores-detalle) - Detalle complementario a la información base de cada senador.
 
 ## Licencia
 
