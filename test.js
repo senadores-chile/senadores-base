@@ -1,5 +1,6 @@
 import test from 'ava'
 import senadoresBase from './'
+import { filter } from './utils'
 
 test('default queries', t => {
   t.plan(4)
@@ -134,4 +135,11 @@ test.skip('invalid queries', t => {
 
   t.throws(() => senadoresBase({ nombre: 1325 }), Error(''))
   t.throws(() => senadoresBase({ rut: '1-9' }), Error(''))
+})
+
+test('export filter', t => {
+  t.plan(2)
+
+  t.is(typeof filter, 'function', `Expected function, got ${typeof filter}`)
+  t.deepEqual(senadoresBase('Allamand'), filter(senadoresBase(), 'Allamand'))
 })
