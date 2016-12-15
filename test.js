@@ -138,8 +138,15 @@ test.skip('invalid queries', t => {
 })
 
 test('export filter', t => {
-  t.plan(2)
+  t.plan(3)
 
   t.is(typeof filter, 'function', `Expected function, got ${typeof filter}`)
   t.deepEqual(senadoresBase('Allamand'), filter(senadoresBase(), 'Allamand'))
+
+  // should also work with arrays of objects that have a 'senador' property
+  const senadores = senadoresBase()
+  const senadoresArray = senadores.map(senador => {
+    return { senador }
+  })
+  t.deepEqual(senadoresBase('Allende')[0], filter(senadoresArray, 'Allende')[0].senador)
 })
