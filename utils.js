@@ -80,8 +80,8 @@ function filter (arrayToFilter, options) {
   const _filter = elem => {
     if (elem.hasOwnProperty('senador')) elem = elem.senador
     // default queries
-    if (typeof options === 'string') return nameFilter(elem, options)
-    if (typeof options === 'number') return defualtRutFilter(elem, options)
+    if (typeof options === 'string' && elem) return nameFilter(elem, options)
+    if (typeof options === 'number' && elem) return defualtRutFilter(elem, options)
 
     return (options.nombre ? nameFilter(elem, options.nombre) : true) &&
            (options.rut ? rutFilter(elem, options.rut) : true) &&
