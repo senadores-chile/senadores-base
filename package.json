@@ -2,7 +2,7 @@
   "name": "senadores-base",
   "description": "Información basica y estatica de los senadores actuales de Chile",
   "author": "Yerko",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "main": "index.js",
   "files": [
     "index.js",
